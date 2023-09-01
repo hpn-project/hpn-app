@@ -339,8 +339,7 @@
   background: linear-gradient(
     82.3deg,
     #f84f3a 10.8%,
-    #f84f3a) 94.3%
-  ;
+    #f84f3a) 94.3% ;
   transition: all 0.475s;
 }
 
@@ -527,16 +526,30 @@
 
 
               <h2 style="color: white;">Mintando...</h2>
-              <p style="color: white;">Mancano 10s (2m 50s)</p>
+             
+              <div class="countdown" style="display: flex; flex-direction: row; align-items: center; justify-content: center; color: white; font-family: 'Inter';">
+                <p style="color: white; margin-right: 15px;">Mancano</p>
+              
+                <div id="minutes" class="countdown-item" style="margin-right: 0px;">
+                    <p class="countdown-number">05</p>
+                </div>
+                <p style="margin-left: 5px;">minuti</p>
+                <p style="margin-left: 10px; margin-right: 10px;">e</p>
+                <div id="seconds" class="countdown-item">
+                    <p class="countdown-number">00</p>
+                </div>
+                <p style="margin-left: 5px;">secondi</p>
+            </div>
+
+
 
               <div style="border-radius: 12px; background: white; width: 90%; height: 10%; margin-bottom: 20px;">
               </div>
               
             </div>
 
-            <div>
-           
-            </div>
+         
+
 
           <div id="non_in_mining">
 
@@ -545,7 +558,7 @@
             <h2 style="color: white; margin-bottom: 0px; margin-top: 10px;">Minta</h2>
             <p style="color: white; margin-top: 15px;">Sessione da 5 minuti</p>
          
-            <button class="button" style="margin-top: 20px;">
+            <button id="start_mint_button" class="button" style="margin-top: 20px;">
               <span style="font-family: 'Inter';" class="button-content">Minta</span>
           </button>
           </div>
@@ -638,6 +651,18 @@ document.getElementById("invite_button").addEventListener("click", function() {
 
 
 
+document.getElementById("start_mint_button").addEventListener("click", function() {
+
+       
+document.getElementById("non_in_mining").style.display = "none";
+document.getElementById("in_mining").style.display = "flex";
+startCountdown();
+
+
+});
+
+
+
 
 
 
@@ -650,6 +675,7 @@ document.getElementById("invite_button").addEventListener("click", function() {
       messagingSenderId: "SENDER_ID",
       appId: "1:879095328386:android:7bcf5f4dabb35a6d250e9b"
     };
+
     firebase.initializeApp(firebaseConfig);
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
   .then(function() {
@@ -773,9 +799,53 @@ function login() {
 
 
 
+    //TIMER MINTING
+
+    const countdownMinutes = 5; 
+    const countdownSeconds = 0; 
+
+    let countdownInterval;
+    let startButtonTimeout;
+    
+
+// Funzione per avviare il countdown
+function startCountdown() {
 
 
+    // Calcola la data di scadenza
+    const countdownDate = new Date();
+    countdownDate.setMinutes(countdownDate.getMinutes() + countdownMinutes);
+    countdownDate.setSeconds(countdownDate.getSeconds() + countdownSeconds);
+    const countdownEndTime = countdownDate.getTime();
 
+    // Funzione per aggiornare il countdown
+    function updateCountdown() {
+        const currentDate = new Date().getTime();
+        const timeRemaining = countdownEndTime - currentDate;
+
+        if (timeRemaining <= 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+            document.getElementById("in_mining").style.display = "none"; 
+            document.getElementById("non_in_mining").style.display = "flex";
+
+
+        } else {
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, "0");
+            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, "0");
+        }
+    }
+
+    // Aggiorna il countdown ogni secondo
+    countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Inizializza il countdown all'avvio
+    updateCountdown();
+}
 
 
 
