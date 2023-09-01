@@ -62,8 +62,6 @@
        #account_interface{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: start;
         height: 84%;
         width: 100%;
         overflow: auto;
@@ -345,6 +343,89 @@
 
 
 
+       
+      /*ACCOUNT_INTERFACE_CSS*/
+
+
+
+   .settings_button{
+     color: white;
+     background-color: transparent;
+     border-color: transparent;
+     font-family: 'Inter';
+    }
+
+    .settings_div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    
+
+    .delete_account_card{
+        inline-size: 250px;
+        border-radius: 12px;
+        background-color: #383840FF;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    
+    }
+
+    .delete_account_button{
+      border-radius: 15px;
+      color: white;
+      background-color: #1e1f23;
+      border-color: transparent;
+    }
+
+    .delete_account_card_container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .divisor{
+      background-color: white;
+      block-size: 1px;
+      inline-size: 200px;
+      margin-inline-start: 20px; 
+    }
+
+    .category_description_text{
+      font-family: 'Maven Pro';
+      color: white;
+      margin-inline-start: 20px; 
+      font-size: 12px;
+      margin-block-end: 18px;
+    }
+
+    .link_settings_button{
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+      margin-inline-start: 10px;
+    }
+
+    .divisor{
+      background-color: white;
+      block-size: 1px;
+      inline-size: 200px;
+      margin-inline-start: 20px; 
+    }
+
+    .text4{
+      font-family: 'Maven Pro';
+      color: white;
+      font-size: 18px;
+      margin-block-end: 18px;
+    }
+
+
+
+
+
 
 
 
@@ -571,11 +652,128 @@
 
 
 
-              <div id="account_interface">
-                <div style="display: flex; flex-direction: row;">
-                  <button style="background-color: transparent; border: transparent; color: white;">Minta</button>
+
+
+        <div id="account_interface">
+      
+
+          
+          <div style="margin-bottom: 20px; margin-top: 40px;">
+           <div class="center" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+           <img src="https://i.ibb.co/3Yxc9wC/settings-image.png" style="inline-size: 150px;">
+          </div>
+        </div>
+         
+
+
+      
+          <div class="master_settings_div">
+          
+            <h3 class="category_description_text">Gestione account</h3>
+          
+            <div class="settings_div">
+              <div style="margin-inline-start: 20px;"></div>
+              <i class="material-icons" style="color: white;">lock_reset</i>
+              <button class="settings_button" id="reset_password_button">Reset password</button>
+            </div>
+    
+          <br>
+    
+              
+          <div class="settings_div">
+            <div style="margin-inline-start: 20px"></div>
+            <i class="material-icons" style="color: white;">logout</i>
+            <button class="settings_button" id="logoutBtn">Disconnetti</button>
+        </div>
+          
+          <br>
+          
+          <div class="settings_div">
+               <div style="margin-inline-start: 20px"></div>
+              <i class="material-icons" style="color: white;">delete</i>
+              <button class="settings_button" id="delete_account_button">Elimina il tuo account</button>
+          </div>
+          
+          <br>
+          
+          <div class="divisor">
+          </div>
+          <h3 class="category_description_text">Legalità e trasparenza</h3>
+          
+    
+  
+          <form id="reset_password_form" style="display: none; inline-size: 100%; justify-content: center; align-items: center;">
+            <div class="card1">
+            <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 0px;">
+            <h4 style="color: white; font-family: 'Inter'; margin-left: 10px; margin-bottom: 0px;">Reset password</h4>
+            <i class="material-icons" style="color: white; margin-left: 10px; margin-top: 20px;">key</i>
+            </div>
+            <p style="color: white; font-family: 'Inter'; margin-left: 10px; margin-right: 10px; margin-top: 10px; font-size: 14px;">Cliccando su "Invia" riceverai una mail all'indirizzo inserito contenente le istruzioni per continuare</p>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <input type="email" style="color: white; background-color: #212529; padding: 5px; border-radius: 12px; border: transparent; font-family: 'Inter'; width: 96%; border-color: transparent; outline: none; padding-left: 10px;" id="emailInput" placeholder="Inserisci l'indirizzo email" required>
+            </div>
+            <div class="landscape" style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 20px;">
+            <button type="button" id="resetPasswordBtn" style="margin-bottom: 20px; border-radius: 12px; border: transparent; padding: 5px; background-color: rgb(87, 87, 94); color: white; font-family: 'Inter';">Conferma</button>
+            <div style="margin-inline-start: 20px"></div>
+            <button type="button" id="CancelResetPasswordBtn" style="margin-bottom: 20px; border-radius: 12px; border: transparent; padding: 5px; background-color: rgb(87, 87, 94); color: white; font-family: 'Inter';">&nbsp&nbspAnnulla&nbsp&nbsp</button>
+          </div>
+        </div>
+          </form>
+    
+    
+    
+          <div class="delete_account_card_container">
+            <div class="delete_account_card">
+              <div id="confirmation_form" style="display: none;">
+                  <h3 style="font-family: 'Inter' ; color: white; font-size: 15px ; margin-block-start: 8px; margin-inline-start: 8px; margin-inline-end: 8px; ">Sei sicuro di voler eliminare il tuo account?</h3>
+                  <button class="delete_account_button" style="font-family: 'Inter'" id="confirm_delete_button">Conferma</button>
+                  <button class="delete_account_button" style="font-family: 'Inter'" id="cancel_delete_button">Annulla</button>
+                  <br>   
+                  <br>
                 </div>
               </div>
+            </div>
+          
+            
+          <div class="settings_div">
+              <div style="margin-inline-start: 20px"></div>
+              <i class="material-icons" style="color: white;">policy</i>
+              <a class="link_settings_button" href="https://sites.google.com/view/hpnproject1/privacy_policy">Politica sulla privacy</a>
+          </div>
+          
+          <br>
+          
+          <div class="settings_div">
+              <div style="margin-inline-start: 20px"></div>
+              <i class="material-icons" style="color: white;">gavel</i>
+              <a class="link_settings_button" href="https://sites.google.com/view/hpnproject1/terms_of_use">Termini di utilizzo</a>
+          
+          </div>
+          
+          
+          
+         
+          <br>
+          <div class="divisor">
+          </div>
+          <h3 class="category_description_text">Supporto e violazioni</h3>
+          
+          <div class="settings_div">
+            <div style="margin-inline-start: 20px"></div>
+            <i class="material-icons" style="color: white;">support_agent</i>
+            <a class="link_settings_button" href="mailto:hpnproject1@gmail.com">E-mail: hpnproject1@gmail.com</a>
+          </div>
+          
+          </div>
+          
+          
+        </div>
+          
+       
+
+          
+
+
 
 
 
@@ -846,6 +1044,113 @@ function startCountdown() {
     // Inizializza il countdown all'avvio
     updateCountdown();
 }
+
+
+
+
+
+// RESET PASSWORD ACCOUNT
+
+
+  // Ottieni il riferimento agli elementi della finestra modale e del pulsante per aprire la finestra
+  var resetPasswordForm = document.getElementById("reset_password_form");
+  var resetPasswordButton = document.getElementById("reset_password_button");
+  var CancelResetPasswordButton = document.getElementById("CancelResetPasswordBtn");
+  
+  CancelResetPasswordButton.addEventListener("click", function () {
+    // Mostra il form per il reset della password
+    resetPasswordForm.style.display = "none";
+  });
+
+
+  // Aggiungi un gestore di eventi al pulsante che apre il form per il reset della password
+  resetPasswordButton.addEventListener("click", function () {
+    // Mostra il form per il reset della password
+    resetPasswordForm.style.display = "flex";
+  });
+
+
+
+ document.getElementById("resetPasswordBtn").addEventListener("click", function () {
+    // Ottieni l'indirizzo email inserito dall'utente
+    var email = document.getElementById("emailInput").value;
+
+    // Invia l'email di reset password
+    firebase.auth().sendPasswordResetEmail(email)
+      .then(function() {
+        // Email inviata con successo
+        alert("Un'email di reset password è stata inviata al tuo indirizzo.");
+      })
+      .catch(function(error) {
+        // Gestisci eventuali errori
+        alert("Si è verificato un errore durante l'invio dell'email di reset password: " + error.message);
+      });
+  });
+
+
+  // DISCONNESSIONE ACCOUNT
+
+
+document.getElementById("logoutBtn").addEventListener("click", function () {
+    // Disconnetti l'utente da Firebase
+    firebase.auth().signOut().then(function() {
+      // Operazione di disconnessione riuscita
+      alert("Disconnesso con successo!");
+    }).catch(function(error) {
+      // Gestisci eventuali errori
+      alert("Errore durante la disconnessione: " + error.message);
+    });
+  });
+
+
+        // ELIMINAZIONE ACCOUNT
+      
+
+    function deleteAccount() {
+        const user = firebase.auth().currentUser;
+    
+        if (user) {
+          // Elimina l'account dell'utente
+          user.delete()
+            .then(() => {
+              // L'account è stato eliminato con successo
+              alert("Account eliminato definitivamente.");
+            })
+            .catch((error) => {
+              // Si è verificato un errore durante l'eliminazione dell'account
+              alert("Si è verificato un errore durante l'eliminazione dell'account.");
+              console.error(error);
+            });
+        } else {
+          // L'utente non è stato trovato o non è effettuato l'accesso
+          alert("Utente non trovato o accesso non effettuato.");
+        }
+      }
+    
+
+
+
+      document.getElementById("delete_account_button").addEventListener("click", function() {
+        // Nascondi il pulsante e mostra il formulario di conferma
+        document.getElementById("delete_account_button").style.display = "none";
+        document.getElementById("confirmation_form").style.display = "block";
+      });
+    
+      document.getElementById("confirm_delete_button").addEventListener("click", function() {
+        // Chiamata alla funzione per eliminare l'account dell'utente
+        deleteAccount();
+    
+        // Ripristina il pulsante e nascondi il formulario di conferma dopo l'eliminazione.
+        document.getElementById("delete_account_button").style.display = "block";
+        document.getElementById("confirmation_form").style.display = "none";
+      });
+    
+      document.getElementById("cancel_delete_button").addEventListener("click", function() {
+        // Ripristina il pulsante e nascondi il formulario di conferma senza eliminare i dati.
+        document.getElementById("delete_account_button").style.display = "block";
+        document.getElementById("confirmation_form").style.display = "none";
+      });
+
 
 
 
