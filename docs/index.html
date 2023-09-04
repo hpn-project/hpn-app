@@ -455,6 +455,9 @@ transition: all 0.475s;
               <div class="field">
                 <input id="access_password" placeholder="Password" class="input-field" type="password">
               </div>
+              <div class="field">
+                <input id="referral_code_imput1" placeholder="Codice referral (opzionale)" class="input-field" type="text">
+              </div>
               <div class="btn">
                 <button class="button1" type="button" onclick="login()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                 <button class="button2" type="button" onclick="register()">Registrati</button>
@@ -1148,10 +1151,48 @@ function register() {
         console.log("Registrazione avvenuta con successo");
 
         // Nascondi il container iniziale
-        document.getElementById("access_screen").style.display = "none";
+        document.getElementById("log_interface").style.display = "none";
         // Mostra il container vuoto
-        document.getElementById("home_page").style.display = "block";
+        document.getElementById("logged_interface").style.display = "block";
+
+
+  
+        
+
+  const referralCode = document.getElementById('referral_code_imput1').value;
+
+  // Usa l'UID e il codice di riferimento per creare il percorso del riferimento al database
+  const referralRef = database.ref(`user_datas/${referralCode}/referred_number/`);
+
+  // Leggi il valore da Firebase
+  referralRef.once('value')
+    .then(snapshot => {
+      let referralValue = snapshot.val();
+
+      // Verifica se il valore è null o undefined e assegna 0 in tal caso
+      if (referralValue === null || referralValue === undefined) {
+        referralValue = 0;
+      }
+
+      // Somma 1 al valore
+      referralValue += 1;
+
+      // Scrivi il nuovo valore nel database
+      referralRef.set(referralValue);
+
+
+    })
+    .catch(error => {
+      alert("Si è verificato un errore, ti invitiamo a segnalarlo a hpnproject1@gmail.com, codice errore: REFERRAL_ADD", error);
+    });
+
+
+
+
+
       })
+
+
 
       .catch(function(error) {
   // Gestisci gli errori di registrazione
@@ -1167,6 +1208,8 @@ function register() {
 
 
 
+
+
     // Funzione di accesso
 function login() {
 var email = document.getElementById("access_email").value;
@@ -1177,8 +1220,8 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     // Accesso avvenuto con successo
     alert("Accesso avvenuto con successo");
 
-    document.getElementById("access_screen").style.display = "none";
-    document.getElementById("home_page").style.display = "block";
+    document.getElementById("log_interface").style.display = "none";
+    document.getElementById("logged_interface").style.display = "block";
   })
 
   .catch(function(error) {
