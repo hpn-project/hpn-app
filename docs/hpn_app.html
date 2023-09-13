@@ -1,753 +1,1432 @@
 <HTML>
-    
-    <head>
+  <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="icon" type="image/x-icon" href="https://i.ibb.co/fGjWPLZ/Google-play-logo.png">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
- 
-        
-        <style>
-    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hpn app</title>
+      <link rel="icon" type="image/x-icon" href="https://i.ibb.co/370nPM6/icon.png">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+      <meta name="google-site-verification" content="44W4lUDbS7-_VhWxK0A7OGVyx9Pre0UTNR9qPw_vf8w" />
 
-     body{
-        background-color: #161719;
-        font-family: 'Inter';
-        color: white;
-        margin: 0;
-        padding: 0;
+      <style>
+      
+      body{
+          margin: 0;
+          padding: 0;
+          background: #1e1f23;
+          font-family: 'Inter';
+      }
+
+      #up_bar{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 8%;
+          background: #383840FF;
+          border-end-end-radius: 12px;
+          border-end-start-radius: 12px
+      }
+
+      #home_page{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: start;
+          height: 84%;
+          overflow: auto;
+      }
+
+
+      #under_bar{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        background-color: #383840FF; 
+        height: 8%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+     }
+
+
+     #log_interface{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+     }
+
+
+     #account_interface{
+      display: flex;
+      flex-direction: column;
+      height: 84%;
+      width: 100%;
+      overflow: auto;
+     }
+
+     #mint_interface{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 84%;
+      width: 100%;
+      overflow: auto;
+     }
+
+
+     #invite_interface{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 84%;
+      width: 100%;
+      overflow: auto;
+     }
+
+     .under_bar_button{
+      background-color: transparent; 
+      font-weight: bold; 
+      border: none; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      color: white;
+      font-family: 'Inter';
      }
 
      .card1{
-        width: 200px;
-        height: 100px;
-        background-color: #2d2c2a;
-        border-radius: 12px;
-        color: white;
-     }
-
-     .title1{
-        color: white;
-        font-family: 'Inter';
-     }
-
-
-     #home_page{
       display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+      flex-direction: column;
+      background-color: #383840FF;
+      color: white; 
+      border-radius: 12px; 
+      width: 90%;
      }
 
-     .responsive_div1{
-      margin-top: 30px;
-     }
+
+
+     /*CERCHIO AMICI INVITATI*/
+     
+     .progress-ring {
+width: 100px;
+height: 100px;
+position: relative;
+}
+
+.progress-ring__svg {
+transform: rotate(-90deg);
+}
+
+.progress-ring__background {
+fill: none;
+stroke: lightgray; /* Colore dello sfondo */
+stroke-width: 12px;
+}
+
+.progress-ring__circle {
+fill: transparent;
+stroke: #f84f3a;
+stroke-width: 12px;
+stroke-dasharray: 251.2; /* Circonferenza del cerchio: 2 * π * r */
+stroke-dashoffset: calc(251.2 - (251.2 * 8 / 100)); /* Percentuale desiderata */
+transition: stroke-dashoffset 0.3s ease;
+}
+
+
+  /*LOGIN_SIGN_UP_PAGE*/
+
+  
+.form {
+width: 85%;
+font-family: 'Inter';
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding-bottom: 0.4em;
+background-color: #383840FF;
+border-radius: 15px;
+padding: 0;
+margin: 0;
+}
+
+#heading {
+text-align: center;
+margin: 2em;
+color: rgb(255, 255, 255);
+font-size: 1.2em;
+}
+
+.field {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5em;
+border-radius: 25px;
+padding: 0.6em;
+border: none;
+outline: none;
+color: white;
+background-color: rgb(70, 70, 77);
+margin-left: 30px;
+margin-right: 30px;
+}
+
+.input-icon {
+height: 1.3em;
+width: 1.3em;
+fill: white;
+}
+
+.input-field {
+font-family: 'Inter';
+background: none;
+border: none;
+outline: none;
+width: 100%;
+color: white;
+}
+
+.form .btn {
+display: flex;
+justify-content: center;
+flex-direction: row;
+margin-top: 2.5em;
+}
+
+.button1 {
+font-family: 'Inter';
+padding: 0.5em;
+padding-left: 1.1em;
+padding-right: 1.1em;
+border-radius: 5px;
+margin-right: 0.5em;
+border: none;
+outline: none;
+transition: .4s ease-in-out;
+background-color: rgb(70, 70, 77);
+color: white;
+}
+
+.button1:hover {
+background-color: rgb(46, 46, 61);
+color: white;
+}
+
+.button2 {
+font-family: 'Inter';
+padding: 0.5em;
+padding-left: 2.3em;
+padding-right: 2.3em;
+border-radius: 5px;
+border: none;
+outline: none;
+transition: .4s ease-in-out;
+background-color: rgb(70, 70, 77);
+color: white;
+}
+
+.button2:hover {
+background-color: rgb(46, 46, 61);
+color: white;
+}
+
+
+  
+     /*SPINNER MINING*/
+
+
+     .spinner {
+width: 70.4px;
+height: 70.4px;
+--clr: #f84f3a;
+--clr-alpha: rgb(247, 197, 159,.1);
+animation: spinner 6s infinite ease;
+transform-style: preserve-3d;
+}
+
+.spinner > div {
+background-color: var(--clr-alpha);
+height: 100%;
+position: absolute;
+width: 100%;
+border: 3.5px solid var(--clr);
+}
+
+.spinner div:nth-of-type(1) {
+transform: translateZ(-35.2px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+transform: rotateY(-270deg) translateX(50%);
+transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+transform: rotateY(270deg) translateX(-50%);
+transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+transform: rotateX(90deg) translateY(-50%);
+transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+transform: rotateX(-90deg) translateY(50%);
+transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+transform: translateZ(35.2px);
+}
+
+@keyframes spinner {
+0% {
+  transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+}
+
+50% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+}
+
+100% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+}
+}
+
+       
+
+      /*START MINING BUTTON*/
+
+      .button {
+position: relative;
+overflow: hidden;
+height: 3rem;
+padding: 0 2rem;
+border-radius: 1.5rem;
+background: #3d3a4e;
+background-size: 400%;
+color: #fff;
+border: none;
+}
+
+.button:hover::before {
+transform: scaleX(1);
+}
+
+.button-content {
+position: relative;
+z-index: 1;
+}
+
+.button::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+transform: scaleX(0);
+transform-origin: 0 50%;
+width: 100%;
+height: inherit;
+border-radius: inherit;
+background: linear-gradient(
+  82.3deg,
+  #f84f3a 10.8%,
+  #f84f3a) 94.3% ;
+transition: all 0.475s;
+}
+
+
 
      
+    /*ACCOUNT_INTERFACE_CSS*/
 
-     /*EFFETTO TYPE*/
 
-     #typed-text {
-            white-space: pre;
-            font-size: 25px;
-        }
 
-        #typed {
-            font-size: 25px;
-            font-weight: bold;
-        }
+ .settings_button{
+   color: white;
+   background-color: transparent;
+   border-color: transparent;
+   font-family: 'Inter';
+  }
 
-        .blinking-cursor {
-            animation: blink 1s step-end infinite;
-            display: inline-block;
-            width: 30px;
-        }
+  .settings_div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  }
+  
 
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
+  .delete_account_card{
+      inline-size: 250px;
+      border-radius: 12px;
+      background-color: #383840FF;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+  
+  }
 
-        #activity-text {
-            font-size: 30px;
-        }
+  .delete_account_button{
+    border-radius: 15px;
+    color: white;
+    background-color: #1e1f23;
+    border-color: transparent;
+  }
 
-        @media screen and (max-width: 600px) {
+  .delete_account_card_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divisor{
+    background-color: white;
+    block-size: 1px;
+    inline-size: 200px;
+    margin-inline-start: 20px; 
+  }
+
+  .category_description_text{
+    font-family: 'Maven Pro';
+    color: white;
+    margin-inline-start: 20px; 
+    font-size: 12px;
+    margin-block-end: 18px;
+  }
+
+  .link_settings_button{
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    margin-inline-start: 10px;
+  }
+
+  .divisor{
+    background-color: white;
+    block-size: 1px;
+    inline-size: 200px;
+    margin-inline-start: 20px; 
+  }
+
+  .text4{
+    font-family: 'Maven Pro';
+    color: white;
+    font-size: 18px;
+    margin-block-end: 18px;
+  }
+
+
+
+
+
+
+
+
+
+      </style>
+
+
+      </head>
+
+      <body>
+          
+
+
+
+        <div id="log_interface" style="display: flex;">
+           
+
+          <img src="https://i.ibb.co/jM7d8kZ/hpn-logo.png" style="margin-bottom: 30px; height: 20%; ">
+
+
+            <form class="form">
+              <p id="heading">Accesso</p>
+              <div class="field">
+                <input id="access_email" autocomplete="off" placeholder="E-mail" class="input-field" type="text">
+              </div>
+              <div class="field">
+                <input id="access_password" placeholder="Password" class="input-field" type="password">
+              </div>
+              <div class="field">
+                <input id="referral_code_imput1" placeholder="Codice referral (opzionale)" class="input-field" type="text">
+              </div>
+              <div class="btn">
+                <button class="button1" type="button" onclick="login()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button class="button2" type="button" onclick="register()">Registrati</button>
+              </div>
+              <button id="forgot_password_button" style="background-color: transparent; border-color: transparent; color: white; font-family: 'Inter'; margin-bottom: 50px;">Password dimenticata?</button>
+          </form>
+
+
+
+          <p style="font-family: 'Inter'; color: white; text-align: center; width: 80%;">Proseguendo dichiari di aver letto ed accettato i <span><a style="color: #f84f3a;" href="https://sites.google.com/view/hpnproject1/terms_of_use">Termini di utilizzo</a></span> e <span><a style="color: #f84f3a;" href="https://sites.google.com/view/hpnproject1/privacy_policy">la Politica sulla privacy</a></span></span></p>
+
+          </div>
+
+
+
+
+
+        <div id="logged_interface">
+         
+
+
+
+    <div id="up_bar">
+      <div style="margin-inline-start: 20px;"></div>
+      <button id="notifications_button" class="under_bar_button"><i class="material-icons notranslate" style="color: white; font-size: 35px;">notifications</i></button>
+      <div style="flex: 1;"></div>
+      <img src="https://i.ibb.co/Vv5Swjk/trasparent-hpn-logo.png"  style="width: 80px; margin-top: 5px;">
+      <div style="flex: 1;"></div>
+      <button id="account_button" class="under_bar_button"><i class="material-icons notranslate" style="color: white; font-size: 34px;">account_circle</i></button>
+      <div style="margin-inline-start: 20px;"></div>
+    </div>
+
+
+
+
+
+       <div id="home_page">
+
         
-            #typed-text,
-            #typed,
-            #activity-text {
-                font-size: 20px;
-            }
+          <div class="card1" style="margin-top: 40px;">
+              <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-bottom: 1px;">
+              <div>
+              <h4 style="margin-left: 20px; margin-bottom: 5px; margin-top: 20px;">Bilancio <span>~</span></h4>
+              <p id="balance_display" class="notranslate" style="margin-left: 20px; font-size: 30px; margin-top: 5px; margin-bottom: 10px;">0 HPT</p>
+              </div>
+              <img src="https://i.ibb.co/xmJ65Tf/human-power-token.png" style="width: 50px; height: 50px; margin-right: 20px;">
+              </div>
+          </div>
 
-            .container{
-                margin-top: 40px;
-            }
+  
 
-        }
-
-
-        /*HEADER*/
-
-
-        .header {
-            position: relative;
-            width: 100%;
-            height: 300px; 
-            background: url('https://i.ibb.co/Jd8PZTL/Try-it-now-2.png') center/cover no-repeat;
-            border-bottom-left-radius: 30px ;
-            border-bottom-right-radius: 30px ;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff00;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            border-bottom-left-radius: 35px ;
-            border-bottom-right-radius: 35px ;
-        }
-
-        .overlay h1 {
-            margin: 0;
-        }
-
-        .overlay p {
-            margin: 10px 0;
-        }
-
-        .text1{
-            color: white;
-            width: 90%;
-            margin-bottom: 0px;
-            
-        }
-
-
-        /*3D TOWER*/
-
-.loader {
-  scale: 4;
-  height: 50px;
-  width: 40px;
-}
-
-.box {
-  position: relative;
-  opacity: 0;
-  left: 10px;
-}
-
-.side-left {
-  position: absolute;
-  background-color: #9f4236;
-  width: 19px;
-  height: 5px;
-  transform: skew(0deg, -25deg);
-  top: 14px;
-  left: 10px;
-}
-
-.side-right {
-  position: absolute;
-  background-color: #9f4236;
-  width: 19px;
-  height: 5px;
-  transform: skew(0deg, 25deg);
-  top: 14px;
-  left: -9px;
-}
-
-.side-top {
-  position: absolute;
-  background-color: #f84f3a;
-  width: 20px;
-  height: 20px;
-  rotate: 45deg;
-  transform: skew(-20deg, -20deg);
-}
-
-.box-1 {
-  animation: from-left 4s infinite;
-}
-
-.box-2 {
-  animation: from-right 4s infinite;
-  animation-delay: 1s;
-}
-
-.box-3 {
-  animation: from-left 4s infinite;
-  animation-delay: 2s;
-}
-
-.box-4 {
-  animation: from-right 4s infinite;
-  animation-delay: 3s;
-}
-
-@keyframes from-left {
-  0% {
-    z-index: 20;
-    opacity: 0;
-    translate: -20px -6px;
-  }
-
-  20% {
-    z-index: 10;
-    opacity: 1;
-    translate: 0px 0px;
-  }
-
-  40% {
-    z-index: 9;
-    translate: 0px 4px;
-  }
-
-  60% {
-    z-index: 8;
-    translate: 0px 8px;
-  }
-
-  80% {
-    z-index: 7;
-    opacity: 1;
-    translate: 0px 12px;
-  }
-
-  100% {
-    z-index: 5;
-    translate: 0px 30px;
-    opacity: 0;
-  }
-}
-
-@keyframes from-right {
-  0% {
-    z-index: 20;
-    opacity: 0;
-    translate: 20px -6px;
-  }
-
-  20% {
-    z-index: 10;
-    opacity: 1;
-    translate: 0px 0px;
-  }
-
-  40% {
-    z-index: 9;
-    translate: 0px 4px;
-  }
-
-  60% {
-    z-index: 8;
-    translate: 0px 8px;
-  }
-
-  80% {
-    z-index: 7;
-    opacity: 1;
-    translate: 0px 12px;
-  }
-
-  100% {
-    z-index: 5;
-    translate: 0px 30px;
-    opacity: 0;
-  }
-}
+          <div class="card1" style="margin-top: 20px;">
+          <h4 style="margin-left: 15px; margin-bottom: 2px;">Aggiornamenti</h4>
+          <p id="news_display" style="margin-left: 15px; margin-top: 5px; margin-right: 15px;">Carico...</p>
+          </div>
 
 
 
+        
+         
+          <div class="card1" style="width: 90%; height: auto; margin-top: 20px;">
+            <h4 style="margin-left: 15px; margin-bottom: 0px;">Amici invitati</h4>
+            <p id="referred_number_display" style="margin-left: 15px; margin-top: 5px; margin-bottom: 0px;">0/10</p>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 10px;">
+              <div class="progress-ring">
+                <svg class="progress-ring__svg" width="100" height="100">
+                  <circle class="progress-ring__background" cx="50" cy="50" r="40"></circle>
+                  <circle class="progress-ring__circle" cx="50" cy="50" r="40"></circle>
+                </svg>
+              </div>
+          </div>
+        </div>
 
-    /*CHECKBOX BUTTON FIVERR*/
+
+      <div class="card1" style="margin-top: 20px; margin-bottom: 20px;">
+        <h4 style="margin-left: 15px; margin-bottom: 0px; margin-right: 15px;">Resta connesso</h4>
+        <p style="margin-left: 15px; margin-top: 8px; margin-right: 15px;">Entra a far parte della nostra comunity sul web!</p>
+        <a style="margin-left: 15px; margin-bottom: 10px; margin-right: 15px;" href="https://t.me/+xVjWqV3lsskyYTU0"><img style="width: 40px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png"></a>
+      </div>
 
 
-    #checkbox {
-  display: none;
-}
+  
 
-.switch {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  background-color: rgb(99, 99, 99);
-  border-radius: 50%;
-  z-index: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgb(126, 126, 126);
-  box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
-}
+      </div>
 
-.powersign {
-  position: relative;
-  width: 30%;
-  height: 30%;
-  border: 4px solid rgb(48, 48, 48);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.powersign::before {
-  content: "";
-  width: 8px;
-  height: 100%;
-  background-color: rgb(99, 99, 99);
-  position: absolute;
-  top: -60%;
-  z-index: 2;
-}
-
-.powersign::after {
-  content: "";
-  width: 4px;
-  height: 100%;
-  background-color: rgb(48, 48, 48);
-  position: absolute;
-  top: -60%;
-  z-index: 3;
-}
-
-#checkbox:checked + .switch .powersign {
-  border: 4px solid rgb(255, 255, 255);
-  box-shadow: 0px 0px 10px rgb(151, 243, 255),
-    0px 0px 5px rgb(151, 243, 255) inset;
-}
-
-#checkbox:checked + .switch .powersign::after {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 5px rgb(151, 243, 255);
-}
-
-#checkbox:checked + .switch {
-  box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
-    0px 0px 2px rgb(151, 243, 255) inset,
-    0px 0px 10px rgb(151, 243, 255) inset,
-    0px 0px 40px rgb(151, 243, 255),
-    0px 0px 100px rgb(151, 243, 255),
-    0px 0px 5px rgb(151, 243, 255);
-  border: 2px solid rgb(255, 255, 255);
-  background-color: rgb(146, 180, 184);
-}
-
-#checkbox:checked + .switch .powersign::before {
-  background-color: rgb(146, 180, 184);
-}
 
 
       
-         /*LAYOUT RESPONSIVI*/
 
-        @media (max-width: 550px) {
-
-      .responsive_div1{
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-      }
+      <div id="invite_interface">
 
 
-      .img2{
-        display: none !important;
-      }
+        <img src="https://i.ibb.co/dBP1JMY/comunity-icon.png" style="width: 200px; margin-top: 20px;">
+        <div class="card1" style="margin-top: 20px;">
+          <h4 style="margin-left: 10px; margin-bottom: 0px;">Invita un amico</h4>
+          <p style="margin-left: 10px; margin-bottom: 2px; margin-right: 5px; font-size: 15px;">Condividi il tuo codice referral da inserire al momento della registrazione</p>
+          <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+            <p id="uid_paragraph" style="color: white; font-family: 'Inter'; font-size: 12px; width: 60%; overflow: hidden;"></p>
+            <button onclick="copyUserId()" style="background-color: transparent;border: transparent ;">
+              <i class="material-icons notranslate" style="color: white; font-size: 25px; background-color: transparent;">content_copy</i>
+            </button>
+          </div>
+        </div>
 
-      .img3{
-        width: 100% !important;
-        transform: skewY(0deg) !important;
-        transform: skewX(0deg) !important;
-        transform: rotate(10deg) !important;
-        width: 75% !important;
-      }
 
+      <div class="card1" style="width: 90%; height: auto; margin-top: 20px;">
+        <h4 style="margin-left: 15px; margin-bottom: 0px;">Amici invitati</h4>
+        <p id="referred_number_display2" style="margin-left: 15px; margin-top: 5px; margin-bottom: 0px;">0/10</p>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 10px;">
+         
+          <div class="progress-ring">
+            <svg class="progress-ring__svg" width="100" height="100">
+              <circle class="progress-ring__background" cx="50" cy="50" r="40"></circle>
+              <circle class="progress-ring__circle" cx="50" cy="50" r="40"></circle>
+            </svg>
+          </div>
+          
+      </div>
+    </div>
+
+
+      <div class="card1" style="margin-top: 20px; margin-bottom: 20px;">
+        <h4 style="margin-left: 10px; margin-bottom: 0px;">Regolamento</h4>
+        <p style="margin-left: 10px; margin-right: 5px; margin-bottom: 0px; font-size: 15px;">Ogni volta che inviti un amico il contatore si aggiorna, ad ogni raggiungimento dei 10 amici ottieni una ricompensa di 1 HPT</p>
+        <p style="margin-left: 10px; margin-right: 5px; margin-top: 5px; font-size: 15px;">Ogni volta che un tuo amico minta ottieni l'equivalente del 10% del suo mint senza sottrarlo</p>
+      </div>
+
+
+
+       
+        
+          
+        
+      </div>
+       
+   
+
+
+
+          <div id="mint_interface">
+
+
+
+            <div id="in_mining" style="height: 100%; width: 100%; display: none; flex-direction: column; align-items: center;">
+            <div class="spinner" style="margin-top: 80px; margin-bottom: 50px;">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+
+
+            <h2 class="notranslate" style="color: white;">Mintando...</h2>
+           
+            <div class="countdown" style="display: flex; flex-direction: row; align-items: center; justify-content: center; color: white; font-family: 'Inter';">
+              <p style="color: white; margin-right: 15px;">Mancano</p>
+            
+              <div id="minutes" class="countdown-item" style="margin-right: 0px;">
+                  <p class="countdown-number">05</p>
+              </div>
+              <p style="margin-left: 5px;">minuti</p>
+              <p style="margin-left: 10px; margin-right: 10px;">e</p>
+              <div id="seconds" class="countdown-item">
+                  <p class="countdown-number">00</p>
+              </div>
+              <p style="margin-left: 5px;">secondi</p>
+          </div>
+
+
+
+            <div style="border-radius: 12px; background: white; width: 90%; height: 10%; margin-bottom: 20px;">
+            </div>
+            
+          </div>
+
+       
+
+
+        <div id="non_in_mining">
+
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <img src="https://i.ibb.co/wsnd9kM/mint-animation-stopped.png" style="width: 300px;">
+          <h2 style="color: white; margin-bottom: 0px; margin-top: 10px;">Minta</h2>
+          <p style="color: white; margin-top: 15px;">Sessione da 5 minuti</p>
+       
+          <button id="start_mint_button" class="button" style="margin-top: 20px;">
+            <span style="font-family: 'Inter';" class="button-content">Minta</span>
+        </button>
+        </div>
+
+     
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <div id="account_interface">
+    
+
+        
+        <div style="margin-bottom: 20px; margin-top: 40px;">
+         <div class="center" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+         <img src="https://i.ibb.co/3Yxc9wC/settings-image.png" style="inline-size: 150px;">
+        </div>
+      </div>
+       
+
+
+    
+        <div class="master_settings_div">
+        
+          <h3 class="category_description_text">Gestione account</h3>
+        
+          <div class="settings_div">
+            <div style="margin-inline-start: 20px;"></div>
+            <i class="material-icons notranslate" style="color: white;">lock_reset</i>
+            <button class="settings_button" id="reset_password_button">Reset password</button>
+          </div>
+  
+        <br>
+  
+            
+        <div class="settings_div">
+          <div style="margin-inline-start: 20px"></div>
+          <i class="material-icons notranslate" style="color: white;">logout</i>
+          <button class="settings_button" id="logoutBtn">Disconnetti</button>
+      </div>
+        
+        <br>
+        
+        <div class="settings_div">
+             <div style="margin-inline-start: 20px"></div>
+            <i class="material-icons notranslate" style="color: white;">delete</i>
+            <button class="settings_button" id="delete_account_button">Elimina il tuo account</button>
+        </div>
+        
+        <br>
+        
+        <div class="divisor">
+        </div>
+        <h3 class="category_description_text">Legalità e trasparenza</h3>
+        
+
+
+        <form id="reset_password_form" style="display: none; inline-size: 100%; justify-content: center; align-items: center;">
+          <div class="card1">
+          <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 0px;">
+          <h4 style="color: white; font-family: 'Inter'; margin-left: 10px; margin-bottom: 0px;">Reset password</h4>
+          <i class="material-icons notranslate" style="color: white; margin-left: 10px; margin-top: 20px;">key</i>
+          </div>
+          <p style="color: white; font-family: 'Inter'; margin-left: 10px; margin-right: 10px; margin-top: 10px; font-size: 14px;">Cliccando su "Invia" riceverai una mail all'indirizzo inserito contenente le istruzioni per continuare</p>
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <input type="email" style="color: white; background-color: #212529; padding: 5px; border-radius: 12px; border: transparent; font-family: 'Inter'; width: 96%; border-color: transparent; outline: none; padding-left: 10px;" id="emailInput" placeholder="Inserisci l'indirizzo email" required>
+          </div>
+          <div class="landscape" style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 20px;">
+          <button type="button" id="resetPasswordBtn" style="margin-bottom: 20px; border-radius: 12px; border: transparent; padding: 5px; background-color: rgb(87, 87, 94); color: white; font-family: 'Inter';">Conferma</button>
+          <div style="margin-inline-start: 20px"></div>
+          <button type="button" id="CancelResetPasswordBtn" style="margin-bottom: 20px; border-radius: 12px; border: transparent; padding: 5px; background-color: rgb(87, 87, 94); color: white; font-family: 'Inter';">&nbsp&nbspAnnulla&nbsp&nbsp</button>
+        </div>
+      </div>
+        </form>
+  
+  
+  
+        <div class="delete_account_card_container">
+          <div class="delete_account_card">
+            <div id="confirmation_form" style="display: none;">
+                <h3 style="font-family: 'Inter' ; color: white; font-size: 15px ; margin-block-start: 8px; margin-inline-start: 8px; margin-inline-end: 8px; ">Sei sicuro di voler eliminare il tuo account?</h3>
+                <button class="delete_account_button" style="font-family: 'Inter'" id="confirm_delete_button">Conferma</button>
+                <button class="delete_account_button" style="font-family: 'Inter'" id="cancel_delete_button">Annulla</button>
+                <br>   
+                <br>
+              </div>
+            </div>
+          </div>
+        
+
+        <div class="settings_div">
+            <div style="margin-inline-start: 20px"></div>
+            <i class="material-icons notranslate" style="color: white;">policy</i>
+            <a class="link_settings_button" href="https://sites.google.com/view/hpnproject1/privacy_policy">Politica sulla privacy</a>
+        </div>
+        
+        <br>
+        
+        <div class="settings_div">
+            <div style="margin-inline-start: 20px"></div>
+            <i class="material-icons notranslate" style="color: white;">gavel</i>
+            <a class="link_settings_button" href="https://sites.google.com/view/hpnproject1/terms_of_use">Termini di utilizzo</a>
+        
+        </div>
+        
+        
+        
+       
+        <br>
+        <div class="divisor">
+        </div>
+        <h3 class="category_description_text">Supporto e violazioni</h3>
+        
+        <div class="settings_div">
+          <div style="margin-inline-start: 20px"></div>
+          <i class="material-icons notranslate" style="color: white;">support_agent</i>
+          <a class="link_settings_button" href="mailto:hpnproject1@gmail.com">E-mail: hpnproject1@gmail.com</a>
+        </div>
+        
+        </div>
+        
+        
+      </div>
+        
+     
+
+        
+
+
+
+
+
+          <div id="under_bar">
+              <div style="margin-inline-start: 20px;"></div>
+              <button id="invite_button" class="under_bar_button" style="font-size: 12px;">
+              <i class="material-icons notranslate" style="font-size: 35px;">groups</i>Invita</button>
+              <div style="flex: 1;"></div>
+              <button id="home_button" class="under_bar_button" style="font-size: 12px;">
+              <i class="material-icons notranslate" style="font-size: 35px;">home</i>Home</button>
+              <div style="flex: 1;"></div>
+              <button id="mint_button" class="under_bar_button" style="font-size: 12px;">
+              <i class="material-icons notranslate" style="font-size: 35px;">rocket_launch</i>Minta</button>
+              <div style="margin-inline-start: 20px;"></div>
+          </div>
+
+
+        </div>
+
+         
+        
+
+
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+     <script>  
+     
+document.getElementById("home_button").addEventListener("click", function() {
+
+
+   
+      document.getElementById("mint_interface").style.display = "none";
+      document.getElementById("account_interface").style.display = "none";
+      document.getElementById("invite_interface").style.display = "none";
+      document.getElementById("home_page").style.display = "flex";
+    
+    
+
+      //VALORE BILANCIO ARROTONDATO
+      function getBalance() {
+  // Ottieni l'utente autenticato da Firebase Authentication
+  const user = firebase.auth().currentUser;
+
+  if (user) {
+    const uid = user.uid; // Ottieni l'UID dell'utente
+
+    // Usa l'UID per creare il percorso del riferimento al database
+    const userBalance = database.ref(`user_datas/${uid}/balance/`);
+
+    // Leggi il valore da Firebase
+    userBalance.once('value')
+      .then(snapshot => {
+        const balanceValue = snapshot.val();
+        // Verifica se il valore è null o undefined e assegna 0 in tal caso
+        const displayValue = (balanceValue !== null && balanceValue !== undefined) ? balanceValue : 0;
+
+        // Arrotonda il valore a 1 cifra decimale utilizzando toFixed(1)
+        const roundedValue = displayValue.toFixed(1);
+
+        // Visualizza il valore nell'elemento HTML
+        const balanceDisplay = document.getElementById('balance_display');
+        balanceDisplay.innerText =  roundedValue + " HPT";
+      });
+  }
+}
+
+
+  
+    // Funzione per ottenere le news
+    function getNews() {
+    const news = database.ref('service/news/');
+
+    // Leggi il valore da Firebase
+    news.once('value')
+      .then(snapshot => {
+        const newsValue = snapshot.val();
+        // Visualizza il valore nell'elemento HTML
+        const newsDisplay = document.getElementById('news_display');
+        newsDisplay.innerText = newsValue;
+      });
+  }
+
+
+
+
+      // Funzione per ottenere gli utenti invitati
+      function getReferredNumber() {
+     // Ottieni l'utente autenticato da Firebase Authentication
+      const user = firebase.auth().currentUser;
+
+  const uid = user.uid; // Ottieni l'UID dell'utente
+  const referredNumberRef = database.ref(`user_datas/${uid}/referred_number/`);
+
+  // Leggi il valore da Firebase
+  referredNumberRef.once('value')
+    .then(snapshot => {
+      const referredNumberValue = snapshot.val();
+      // Visualizza il valore nell'elemento HTML
+      const referredNumberDisplay = document.getElementById('referred_number_display');
+      referredNumberDisplay.innerText = referredNumberValue + "/10";
+
+      const referredNumberDisplay2 = document.getElementById('referred_number_display2');
+      referredNumberDisplay2.innerText = referredNumberValue + "/10";
+    });
    }
 
 
 
 
 
-@media (min-width: 551px) {
 
-  .responsive_div1{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      
-      }
+  
+    // chiamata GET per ottenere i dati
+    getBalance();
+    getNews();
+    getReferredNumber();
 
 
-      .h_1{
-        font-size: 30px !important;
-        margin-top: 40px !important;
-        margin-left: 40px !important;
-      }
 
 
-      .p_1{
-        font-size: 20px !important;
-        margin-left: 40px !important;
-      }
+});
 
      
-      
-      .img1{
-        display: none !important;
-      }
+document.getElementById("mint_button").addEventListener("click", function() {
 
-      .img2{
-        display: flex !important;
-        width: 240px !important;
-        height: 240px !important;
-        margin-right: 30px !important;
-      }
+     
+      document.getElementById("account_interface").style.display = "none";
+      document.getElementById("invite_interface").style.display = "none";
+      document.getElementById("home_page").style.display = "none";
+      document.getElementById("mint_interface").style.display = "flex";
+     
 
-      .img3{
-        margin-left: 80px !important;
-      }
+});
 
 
-      .h_2{
-        font-size: 30px !important;
-        margin-left: 100px !important;
-        margin-right: 30px !important;
-      }
-
-      .p_2{
-        font-size: 20px !important;
-        margin-left: 100px !important;
-        margin-right: 30px !important;
-      }
-
-      .div_img_1{
-        display: none !important;
-      }
-
-      .div_img_2{
-        display: flex !important;
-        flex-direction: column !important;
-        margin-top: 20px !important;
-        margin-left: 150px !important;
-        margin-right: 70px !important;
-      }
-
-      .h_3{
-        font-size: 30px !important;
-        margin-top: 60px !important;
-        margin-left: 40px !important;
-      }
-
-      
-      .p_3{
-        font-size: 20px !important;
-        margin-left: 40px !important;
-      }
+document.getElementById("account_button").addEventListener("click", function() {
 
 
-      .div_img_3{
-        margin-right: 30px !important;
-      }
+      document.getElementById("invite_interface").style.display = "none";
+      document.getElementById("home_page").style.display = "none";
+      document.getElementById("mint_interface").style.display = "none";
+      document.getElementById("account_interface").style.display = "flex";
+
+});
 
 
-      .h_4{
-        font-size: 30px !important;
-        margin-top: 50px !important;
-      }
 
-      .p_4{
-        font-size: 20px !important;
-        
-      }
+document.getElementById("invite_button").addEventListener("click", function() {
+
+      document.getElementById("home_page").style.display = "none";
+      document.getElementById("mint_interface").style.display = "none";
+      document.getElementById("account_interface").style.display = "none";
+      document.getElementById("invite_interface").style.display = "flex";
+
+   
+
+    
+      // Funzione per ottenere gli utenti invitati
+      function getReferredNumber() {
+     // Ottieni l'utente autenticato da Firebase Authentication
+      const user = firebase.auth().currentUser;
+
+  const uid = user.uid; // Ottieni l'UID dell'utente
+  const referredNumberRef = database.ref(`user_datas/${uid}/referred_number/`);
+
+  // Leggi il valore da Firebase
+  referredNumberRef.once('value')
+    .then(snapshot => {
+      const referredNumberValue = snapshot.val();
+      // Visualizza il valore nell'elemento HTML
+      const referredNumberDisplay = document.getElementById('referred_number_display');
+      referredNumberDisplay.innerText = referredNumberValue + "/10";
+
+      const referredNumberDisplay2 = document.getElementById('referred_number_display2');
+      referredNumberDisplay2.innerText = referredNumberValue + "/10";
+    });
+   }
 
 
-      .card{
-        margin-left: 50px !important;
-        width: 50% !important;
-      }
+  getReferredNumber();
 
-      .loader{
-        margin-right: 60px;
-      }
 
-      .img3{
-        width: 100% !important;
-      }
+
+});
+
+
+
+document.getElementById("start_mint_button").addEventListener("click", function() {
+
+     
+document.getElementById("non_in_mining").style.display = "none";
+document.getElementById("in_mining").style.display = "flex";
+startCountdown();
+
+
+});
+
+
+
+
+
+
+  // Inizializza la tua app Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyDbrJxtu9SUfefFy83dON75X872jgtvHCE",
+    authDomain: "https://hpn-it-database-default-rtdb.firebaseio.com/",
+    projectId: "hpn-it-database",
+    storageBucket: "hpn-it-database.appspot.com",
+    messagingSenderId: "SENDER_ID",
+    appId: "1:560490178687:android:4c7fa58726d3289708374a"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+.then(function() {
+
+// Verifica dello stato di autenticazione all'avvio
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // L'utente è già loggato
+  console.log("Utente già loggato");
+  document.getElementById("log_interface").style.display = "none";
+  document.getElementById("logged_interface").style.display = "block";
+  document.getElementById("mint_interface").style.display = "none";
+  document.getElementById("account_interface").style.display = "none";
+  document.getElementById("invite_interface").style.display = "none";
+  document.getElementById("home_page").style.display = "flex";
+  document.getElementById("under_bar").style.display = "flex";
+  document.getElementById("up_bar").style.display = "flex";
+
+
+
+  // Ottieni l'UID dell'utente
+  var uid = user.uid;
+
+ 
+    //VALORE BILANCIO ARROTONDATO
+    function getBalance() {
+  // Ottieni l'utente autenticato da Firebase Authentication
+  const user = firebase.auth().currentUser;
+
+  if (user) {
+    const uid = user.uid; // Ottieni l'UID dell'utente
+
+    // Usa l'UID per creare il percorso del riferimento al database
+    const userBalance = database.ref(`user_datas/${uid}/balance/`);
+
+    // Leggi il valore da Firebase
+    userBalance.once('value')
+      .then(snapshot => {
+        const balanceValue = snapshot.val();
+        // Verifica se il valore è null o undefined e assegna 0 in tal caso
+        const displayValue = (balanceValue !== null && balanceValue !== undefined) ? balanceValue : 0;
+
+        // Arrotonda il valore a 1 cifra decimale utilizzando toFixed(1)
+        const roundedValue = displayValue.toFixed(1);
+
+        // Visualizza il valore nell'elemento HTML
+        const balanceDisplay = document.getElementById('balance_display');
+        balanceDisplay.innerText =  roundedValue + " HPT";
+      });
+  }
+}
+
+
+    // Funzione per ottenere le news
+    function getNews() {
+    const news = database.ref('service/news/');
+
+    // Leggi il valore da Firebase
+    news.once('value')
+      .then(snapshot => {
+        const newsValue = snapshot.val();
+        // Visualizza il valore nell'elemento HTML
+        const newsDisplay = document.getElementById('news_display');
+        newsDisplay.innerText = newsValue;
+      });
+  }
+
+
+
+
+      // Funzione per ottenere gli utenti invitati
+      function getReferredNumber() {
+     // Ottieni l'utente autenticato da Firebase Authentication
+      const user = firebase.auth().currentUser;
+
+  const uid = user.uid; // Ottieni l'UID dell'utente
+  const referredNumberRef = database.ref(`user_datas/${uid}/referred_number/`);
+
+  // Leggi il valore da Firebase
+  referredNumberRef.once('value')
+    .then(snapshot => {
+      const referredNumberValue = snapshot.val();
+      // Visualizza il valore nell'elemento HTML
+      const referredNumberDisplay = document.getElementById('referred_number_display');
+      referredNumberDisplay.innerText = referredNumberValue + "/10";
+
+      const referredNumberDisplay2 = document.getElementById('referred_number_display2');
+      referredNumberDisplay2.innerText = referredNumberValue + "/10";
+    });
+   }
+
+
+
+  
+    // chiamata GET per ottenere i dati
+    getBalance();
+    getNews();
+    getReferredNumber();
+
+
+
+
+
+    // Aggiorna il testo del paragrafo con l'UID
+    var uidParagraph = document.getElementById("uid_paragraph");
+    uidParagraph.textContent = uid;
+
+    // Aggiungi un attributo data-clipboard-text al pulsante con l'UID
+    var copyButton = document.querySelector("button[onclick='copyUserId()']");
+    copyButton.setAttribute("data-clipboard-text", uid);
+  
+
+
+
+} else {
+  // L'utente non è loggato
+  console.log("Utente non loggato");
+  document.getElementById("log_interface").style.display = "flex";
+  document.getElementById("logged_interface").style.display = "none";
+}
+});
+
+
+})
+.catch(function(error) {
+  console.log(error);
+});
+
+
+
+
+   // Funzione per copiare l'UID negli appunti
+   function copyUserId() {
+    var uid = document.getElementById("uid_paragraph").textContent;
+    var tempInput = document.createElement("input");
+    tempInput.value = uid;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert("Codice referral copiato negli appunti");
     }
 
 
-       @media (min-width: 1100px) {
-
-        .responsive_div1{
-        display: flex;
-        flex-direction: row;
-        width: 70%;
-      }
-
-      .card{
-        margin-left: 50px !important;
-        width: 30% !important;
-      }
-
-      .h_1{
-       font-size: 30px;
-      }
-
-      .p_1{
-        font-size: 20px;
-      }
-
-      .h_2{
-       font-size: 30px;
-       margin-left: 100px !important;
-      }
-
-      .p_2{
-        font-size: 20px;
-        margin-left: 100px !important;
-        margin-bottom: 100px !important;
-      }
-
-      .h_3{
-       font-size: 30px;
-      }
-
-      .p_3{
-        font-size: 20px;
-      }
-
-      .h_4{
-       font-size: 30px;
-      }
-
-      .p_4{
-        font-size: 20px;
-      }
-
-      .loader{
-        scale: 5.5;
-      }
-
-      .img3{
-        width: 100% !important;
-        transform: skewY(-10deg) !important;
-        transform: skewX(5deg) !important;
-        margin-right: 40px !important;
-        margin-left: 80px !important;
-      }
-
-      .iframe_responsive_animation1{
-        width: 200px;
-        margin-left: 30px !important;
-      }
-
-      .img_4{
-        margin-left: 40px !important;
-      }
-
-      .img_5{
-        margin-left: 40px !important;
-        width: 100% !important;
-      }
 
 
-       }
+// Funzione di registrazione
+function register() {
+    var email = document.getElementById("access_email").value;
+    var password = document.getElementById("access_password").value;
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(function(user) {
+        // Registrazione avvenuta con successo
+        console.log("Registrazione avvenuta con successo");
+
+        // Nascondi il container iniziale
+        document.getElementById("log_interface").style.display = "none";
+        // Mostra il container vuoto
+        document.getElementById("logged_interface").style.display = "block";
 
 
-
-
-
-
-        </style>
-    </head>
-
-
-    <body>
-
-        <div class="header">
-            <div class="overlay">
-        <div class="responsive_div1" style="display: flex; flex-direction: row; width: 100%; height: 100%; align-items: center; justify-content: center;">
-
-         </div>
-        </div>
-      </div>
-       
-
-
-      
-
-
-
-      <div id="home_page">
-
-        <div class="responsive_div1">
-         <div style="display: flex; align-items: center; justify-content: center;">
-         <img class="img1" src="https://i.ibb.co/5LFYfr0/hpn-png.png" style="width: 100%; margin-top: 30px; margin-bottom: 30px;">
-         </div>
-         <div>
-         <h2 class="h_1" style="margin-left: 20px; margin-bottom: 0px; margin-top: 2px;">Chi siamo?</h2>
-         <p class="p_1" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Siamo una startup italiana nata nel 2023 con lo scopo di ridare fiducia al mondo cripto. Vogliamo partire da piccoli passi per arrivare a grandi ecosistemi, per questo crediamo che ogni utente sia importante per la realizzazione di un sistema di questo tipo.</p>
-        </div>
-        <img class="img2" src="https://i.ibb.co/5LFYfr0/hpn-png.png" style="margin-left: 50px; margin-top: 20px; object-fit:contain; width: 40% !important;">
-        </div>
-
-
-        <div class="responsive_div1">
-        <div style="display: flex; align-items: center; justify-content: center;">
-        <img class="img3" src="https://i.ibb.co/ChGns0D/screen1.png" style="width: 80%; margin-top: 20px; transform: skewY(-5deg);">
-        </div>
-        <div>
-        <h2 class="h_2" style="margin-left: 20px; margin-bottom: 0px; margin-top: 20px;">Che cos'è hpn app?</h2>
-        <p class="p_2" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Hpn app è un'app che punta alla collettività, un network attraverso il quale vorremmo permettere agli utenti di poter ricavare dei profitti semplicemente svolgendo delle task grazie alle aziende e start up che decidono di darci fiducia sponsorizzandosi sulla nostra piattaforma. </p>
-     </div>
-      </div>
- 
-
-
-     
-
-        <div class="responsive_div1">
-           <div class="div_img_1">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: -30px;">
-                <div class="loader" style="margin-top: 80px; margin-bottom: 60px;">
-                    <div class="box box-1">
-                      <div class="side-left"></div>
-                      <div class="side-right"></div>
-                      <div class="side-top"></div>
-                    </div>
-                    <div class="box box-2">
-                      <div class="side-left"></div>
-                      <div class="side-right"></div>
-                      <div class="side-top"></div>
-                    </div>
-                    <div class="box box-3">
-                      <div class="side-left"></div>
-                      <div class="side-right"></div>
-                      <div class="side-top"></div>
-                    </div>
-                    <div class="box box-4">
-                      <div class="side-left"></div>
-                      <div class="side-right"></div>
-                      <div class="side-top"></div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                <h2 class="h_3" style="margin-left: 20px; margin-bottom: 0px; margin-top: 20px;">Come viene generato il token?</h2>
-                <p class="p_3" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Hpn è una rete di persone e attività che sponsorizzandosi sulla nostra piattaforma sotto forma di annunci pubblicitari ci permettono di ottenere delle commissioni che per la maggior parte sono utilizzate per rendere il token stabile e in un futuro non molto remoto anche spendibili nella vita reale.</p>
-                </div>
-                <div class="div_img_2" style="display: none;">
-                  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: -30px;">
-                    <div class="loader">
-                        <div class="box box-1">
-                          <div class="side-left"></div>
-                          <div class="side-right"></div>
-                          <div class="side-top"></div>
-                        </div>
-                        <div class="box box-2">
-                          <div class="side-left"></div>
-                          <div class="side-right"></div>
-                          <div class="side-top"></div>
-                        </div>
-                        <div class="box box-3">
-                          <div class="side-left"></div>
-                          <div class="side-right"></div>
-                          <div class="side-top"></div>
-                        </div>
-                        <div class="box box-4">
-                          <div class="side-left"></div>
-                          <div class="side-right"></div>
-                          <div class="side-top"></div>
-                        </div>
-                      </div>
-                      </div>
-                      </div>
-             </div>
-
-
-             <div class="responsive_div1">
-                <div class="div_img_3" style="display: flex;flex-direction: column ; align-items: center; justify-content: center; margin-bottom: -30px;">
-                  <img class="img_4" src="https://i.ibb.co/zrdd5C6/undraw-chatting-re-j55r.png" style="width: 280px; margin-bottom: 40px; margin-top: 40px;">
-                </div>
-                    <div>
-                    <h2 class="h_4" style="margin-left: 20px; margin-bottom: 0px; margin-top: 30px;">Quali sono le tipologie di guadagno?</h2>
-                    <p class="p_4" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Oltre alle diverse task disponibili che sono sempre in aggiornamento e in aggiunta Hpn ti permette di ricevere ricompense da tutti gli utenti che inseriscono il tuo codice referral al momento della registrazione, infatti, ogni volta che mintano eseguendo le task ottieni l'equivalente del 10% della ricompensa assegnata all'utente invitato.</p>
-                  </div>
-              </div>
+  
         
-         
 
-              <div class="responsive_div1">
-                <div style="display: flex; align-items: center; justify-content: center;">
-                <img class="img1" src="https://i.ibb.co/pZCq53b/undraw-solution-mindset-re-57bf-1.png" style="width: 80%; margin-top: 30px; margin-bottom: 30px;">
-                </div>
-                <div>
-                <h2 class="h_1" style="margin-left: 20px; margin-bottom: 0px; margin-top: 2px;">Usare l'app rovina il cellulare?</h2>
-                <p class="p_1" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Conosciamo diverse app che permettono agli utenti di minare direttamente dal loro dispositivo rovinando con il tempo le componenti di esso, i nostri sviluppatori lavorano costantemente affinchè la nostra app non influisca in maniera significativa ne sulle prestazioni che sulla vita dei dispositivi degli utenti.</p>
-               </div>
-               <img class="img2" src="https://i.ibb.co/pZCq53b/undraw-solution-mindset-re-57bf-1.png" style="margin-left: 50px; margin-top: 20px; object-fit:contain; width: 40% !important;">
-               </div>
+  const referralCode = document.getElementById('referral_code_imput1').value;
+
+  // Usa l'UID e il codice di riferimento per creare il percorso del riferimento al database
+  const referralRef = database.ref(`user_datas/${referralCode}/referred_number/`);
+
+  // Leggi il valore da Firebase
+  referralRef.once('value')
+    .then(snapshot => {
+      let referralValue = snapshot.val();
+
+      // Verifica se il valore è null o undefined e assegna 0 in tal caso
+      if (referralValue === null || referralValue === undefined) {
+        referralValue = 0;
+      }
+
+      // Somma 1 al valore
+      referralValue += 1;
+
+      // Scrivi il nuovo valore nel database
+      referralRef.set(referralValue);
 
 
-        <div class="responsive_div1">
-            <div class="div_img_3" style="display: flex;flex-direction: column ; align-items: center; justify-content: center; margin-bottom: -30px;">
-            <img class="img_5" src="https://i.ibb.co/ySZVsFX/log-screenshot.png" style="width: 100%;">
-            </div>
-                <div>
-                <h2 class="h_4" style="margin-left: 20px; margin-bottom: 0px; margin-top: 0px !important;">Fantastico! Come inizio?</h2>
-                <p class="p_4" style="margin-left: 20px; margin-right: 20px; margin-top: 5px;">Grazie per aver deciso di provare la nostra app, clicca sul bottone sottostante per connetterti ed entrare a far parte di Hpn, non vediamo l'ora di conoscerti, ci vediamo dall'altra parte!</p>
-              </div>
-          </div>
+    })
+    .catch(error => {
+      alert("Si è verificato un errore, ti invitiamo a segnalarlo a hpnproject1@gmail.com, codice errore: REFERRAL_ADD", error);
+    });
+
+
+
+
+
+      })
+
+
+
+      .catch(function(error) {
+  // Gestisci gli errori di registrazione
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  if (errorCode === "auth/email-already-in-use") {
+    alert("L'indirizzo email è già in uso. Si prega di utilizzare un altro indirizzo.");
+  } else {
+    alert("Errore durante la registrazione. Si prega di riprovare più tardi.");
+  }
+ });
+  }
+
+
+
+
+
+    // Funzione di accesso
+function login() {
+var email = document.getElementById("access_email").value;
+var password = document.getElementById("access_password").value;
+
+firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(function(user) {
+    // Accesso avvenuto con successo
+    alert("Accesso avvenuto con successo");
+
+    document.getElementById("log_interface").style.display = "none";
+    document.getElementById("logged_interface").style.display = "block";
+  })
+
+  .catch(function(error) {
+    // Gestisci gli errori di accesso
+    var errorMessage = error.message;
+    if (errorMessage.includes("password")) {
+      alert("Password errata. Si prega di riprovare");
+    } else {
+      alert("Errore durante l'accesso: " + errorMessage);
+    }
+  });
+}
+
+
+
+
+  //TIMER MINTING
+
+  const countdownMinutes = 0; 
+  const countdownSeconds = 10; 
+
+  let countdownInterval;
+  let startButtonTimeout;
+  
+
+// Funzione per avviare il countdown
+function startCountdown() {
+
+
+  // Calcola la data di scadenza
+  const countdownDate = new Date();
+  countdownDate.setMinutes(countdownDate.getMinutes() + countdownMinutes);
+  countdownDate.setSeconds(countdownDate.getSeconds() + countdownSeconds);
+  const countdownEndTime = countdownDate.getTime();
+
+  // Funzione per aggiornare il countdown
+  function updateCountdown() {
+      const currentDate = new Date().getTime();
+      const timeRemaining = countdownEndTime - currentDate;
+
+      if (timeRemaining <= 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("minutes").innerHTML = "00";
+          document.getElementById("seconds").innerHTML = "00";
+          document.getElementById("in_mining").style.display = "none"; 
+          document.getElementById("non_in_mining").style.display = "flex";
+
+
+
+// Ottieni l'UID dell'utente corrente
+const uid = firebase.auth().currentUser.uid;
+
+// Usa l'UID per creare il percorso del riferimento al database
+const userBalance = database.ref(`user_datas/${uid}/balance/`);
+
+// Leggi il valore da Firebase
+userBalance.once('value')
+  .then(snapshot => {
+    const balanceValue = snapshot.val();
+    // Verifica se il valore è null o undefined e assegna 0.1 in tal caso
+    const displayValue = (balanceValue !== null && balanceValue !== undefined) ? balanceValue : 0;
+
+    // Calcola il nuovo valore aggiungendo 0.10
+    const newBalance = displayValue + 0.10;
+
+    // Aggiorna il nodo "balance" nel database con il nuovo valore
+    const updateData = {};
+    updateData[`user_datas/${uid}/balance`] = newBalance;
+    database.ref().update(updateData);
+
+    // Visualizza il nuovo valore nell'elemento HTML
+    const balanceDisplay = document.getElementById('balance_display');
+    balanceDisplay.innerText = newBalance + " HPT";
+  })
+  .catch(error => {
+    console.error('Errore durante la lettura o l\'aggiornamento dei dati nel database:', error);
+  });
+
+ 
+      
+   }else {
+          const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          document.getElementById("minutes").innerHTML = String(minutes).padStart(2, "0");
+          document.getElementById("seconds").innerHTML = String(seconds).padStart(2, "0");
+      }
+  }
+
+  // Aggiorna il countdown ogni secondo
+  countdownInterval = setInterval(updateCountdown, 1000);
+
+  // Inizializza il countdown all'avvio
+  updateCountdown();
+}
+
+
+
+
+
+// RESET PASSWORD ACCOUNT
+
+
+// Ottieni il riferimento agli elementi della finestra modale e del pulsante per aprire la finestra
+var resetPasswordForm = document.getElementById("reset_password_form");
+var resetPasswordButton = document.getElementById("reset_password_button");
+var CancelResetPasswordButton = document.getElementById("CancelResetPasswordBtn");
+
+CancelResetPasswordButton.addEventListener("click", function () {
+  // Mostra il form per il reset della password
+  resetPasswordForm.style.display = "none";
+});
+
+
+// Aggiungi un gestore di eventi al pulsante che apre il form per il reset della password
+resetPasswordButton.addEventListener("click", function () {
+  // Mostra il form per il reset della password
+  resetPasswordForm.style.display = "flex";
+});
+
+
+
+document.getElementById("resetPasswordBtn").addEventListener("click", function () {
+  // Ottieni l'indirizzo email inserito dall'utente
+  var email = document.getElementById("emailInput").value;
+
+  // Invia l'email di reset password
+  firebase.auth().sendPasswordResetEmail(email)
+    .then(function() {
+      // Email inviata con successo
+      alert("Un'email di reset password è stata inviata al tuo indirizzo.");
+    })
+    .catch(function(error) {
+      // Gestisci eventuali errori
+      alert("Si è verificato un errore durante l'invio dell'email di reset password: " + error.message);
+    });
+});
+
+
+// DISCONNESSIONE ACCOUNT
+
+
+document.getElementById("logoutBtn").addEventListener("click", function () {
+  // Disconnetti l'utente da Firebase
+  firebase.auth().signOut().then(function() {
+    // Operazione di disconnessione riuscita
+    alert("Disconnesso con successo!");
+  }).catch(function(error) {
+    // Gestisci eventuali errori
+    alert("Errore durante la disconnessione: " + error.message);
+  });
+});
+
+
+      // ELIMINAZIONE ACCOUNT
     
 
-        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 80px; margin-top: 10px;">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox" class="switch">
-                <div class="powersign"></div>
-            </label>
-        </div>
+  function deleteAccount() {
+      const user = firebase.auth().currentUser;
+  
+      if (user) {
+        // Elimina l'account dell'utente
+        user.delete()
+          .then(() => {
+            // L'account è stato eliminato con successo
+            alert("Account eliminato definitivamente.");
+          })
+          .catch((error) => {
+            // Si è verificato un errore durante l'eliminazione dell'account
+            alert("Si è verificato un errore durante l'eliminazione dell'account.");
+            console.error(error);
+          });
+      } else {
+        // L'utente non è stato trovato o non è effettuato l'accesso
+        alert("Utente non trovato o accesso non effettuato.");
+      }
+    }
+  
 
-       </div>
-        
 
-        <script>
 
-            //CECKBOX BUTTON FIVERR
+    document.getElementById("delete_account_button").addEventListener("click", function() {
+      // Nascondi il pulsante e mostra il formulario di conferma
+      document.getElementById("delete_account_button").style.display = "none";
+      document.getElementById("confirmation_form").style.display = "block";
+    });
+  
+    document.getElementById("confirm_delete_button").addEventListener("click", function() {
+      // Chiamata alla funzione per eliminare l'account dell'utente
+      deleteAccount();
+  
+      // Ripristina il pulsante e nascondi il formulario di conferma dopo l'eliminazione.
+      document.getElementById("delete_account_button").style.display = "block";
+      document.getElementById("confirmation_form").style.display = "none";
+    });
+  
+    document.getElementById("cancel_delete_button").addEventListener("click", function() {
+      // Ripristina il pulsante e nascondi il formulario di conferma senza eliminare i dati.
+      document.getElementById("delete_account_button").style.display = "block";
+      document.getElementById("confirmation_form").style.display = "none";
+    });
 
-                
-          // Ottieni la checkbox dal documento
-          var checkbox = document.getElementById('checkbox');
-        
-        // Aggiungi un ascoltatore di eventi per controllare quando la checkbox viene selezionata
-        checkbox.addEventListener('change', function() {
-            // Controlla se la checkbox è selezionata
-            if (checkbox.checked) {
-                // Ritarda l'apertura della pagina di Google di 2 secondi
-                setTimeout(function() {
-                    window.location.href = 'web_app.html';
-                }, 100); // 2000 millisecondi = 2 secondi
-            }
-        });
 
-       
 
-        </script>
-    </body>
+     </script>
 
-    </html>
+      </body>
+</html>
